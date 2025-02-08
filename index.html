@@ -17,7 +17,10 @@
 
   <script>
     const elBtn = document.querySelector("button");
-    elBtn.addEventListener("click", function addTask() {
+    elBtn.addEventListener("click", addTask);
+    
+    function addTask(){
+      {
       const taskInput = document.getElementById("taskInput");
       const taskText = taskInput.value.trim(taskInput);
       const todoList = document.getElementById("todo-list");
@@ -28,7 +31,7 @@
 
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.addEventListener("change", function () {
+        checkbox.addEventListener("change", () => {
           taskTextSpan.classList.toggle("completed");
         })
 
@@ -37,7 +40,7 @@
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
-        removeBtn.addEventListener("click", function () {
+        removeBtn.addEventListener("click",  () => {
           todoList.removeChild(taskElement);
         })
 
@@ -48,13 +51,9 @@
         todoList.appendChild(taskElement);
         
         taskInput.value = "";
-      }
-      
-      
+      }   
     }
-    )
-    
-    
+    }  
   </script>
 </body>
 </html>
